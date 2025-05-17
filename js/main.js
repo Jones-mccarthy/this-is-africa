@@ -6,13 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function checkScroll() {
         if (window.innerWidth <= 768) {
-            if (window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.backgroundColor = 'transparent';
-                header.style.boxShadow = 'none';
-            }
+            header.style.backgroundColor = 'white';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
         }
     }
     
@@ -130,17 +125,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Adjust card width based on screen size
             if (window.innerWidth <= 768) {
-                cardWidth = storyCards[0].offsetWidth + 16; // card width + margin
+                // On mobile, no need to adjust for carousel as we're displaying in block format
+                storyCards.forEach(card => {
+                    card.style.display = 'flex';
+                });
             } else {
-                cardWidth = 380 + 32; // card width + margin
+                cardWidth = 380 + 32; // card width + margin for desktop
+                
+                // Make all cards visible
+                storyCards.forEach(card => {
+                    card.style.display = 'flex';
+                });
+                
+                maxPosition = (storyCards.length - 1) * cardWidth;
             }
-            
-            // Make all cards visible
-            storyCards.forEach(card => {
-                card.style.display = 'flex';
-            })
-            
-            maxPosition = (storyCards.length - 1) * cardWidth;
         }
         
         // Initial setup
@@ -151,33 +149,39 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Next button functionality
         nextBtn.addEventListener('click', function() {
-            // Show 1 card at a time on mobile, 3 cards at a time on desktop
-            const visibleCards = window.innerWidth <= 768 ? 1 : 3;
-            const maxVisiblePosition = Math.max(0, (storyCards.length - visibleCards) * cardWidth);
-            
-            if (currentPosition < maxVisiblePosition) {
-                currentPosition += cardWidth;
-                carousel.style.transform = `translateX(-${currentPosition}px)`;
-            } else {
-                // Loop back to start
-                currentPosition = 0;
-                carousel.style.transform = `translateX(0)`;
+            // Only apply carousel functionality on desktop
+            if (window.innerWidth > 768) {
+                // Show 3 cards at a time on desktop
+                const visibleCards = 3;
+                const maxVisiblePosition = Math.max(0, (storyCards.length - visibleCards) * cardWidth);
+                
+                if (currentPosition < maxVisiblePosition) {
+                    currentPosition += cardWidth;
+                    carousel.style.transform = `translateX(-${currentPosition}px)`;
+                } else {
+                    // Loop back to start
+                    currentPosition = 0;
+                    carousel.style.transform = `translateX(0)`;
+                }
             }
         });
         
         // Previous button functionality
         prevBtn.addEventListener('click', function() {
-            // Show 1 card at a time on mobile, 3 cards at a time on desktop
-            const visibleCards = window.innerWidth <= 768 ? 1 : 3;
-            const maxVisiblePosition = Math.max(0, (storyCards.length - visibleCards) * cardWidth);
-            
-            if (currentPosition > 0) {
-                currentPosition -= cardWidth;
-                carousel.style.transform = `translateX(-${currentPosition}px)`;
-            } else {
-                // Loop to end
-                currentPosition = maxVisiblePosition;
-                carousel.style.transform = `translateX(-${maxVisiblePosition}px)`;
+            // Only apply carousel functionality on desktop
+            if (window.innerWidth > 768) {
+                // Show 3 cards at a time on desktop
+                const visibleCards = 3;
+                const maxVisiblePosition = Math.max(0, (storyCards.length - visibleCards) * cardWidth);
+                
+                if (currentPosition > 0) {
+                    currentPosition -= cardWidth;
+                    carousel.style.transform = `translateX(-${currentPosition}px)`;
+                } else {
+                    // Loop to end
+                    currentPosition = maxVisiblePosition;
+                    carousel.style.transform = `translateX(-${maxVisiblePosition}px)`;
+                }
             }
         });
         

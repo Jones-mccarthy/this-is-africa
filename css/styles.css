@@ -316,27 +316,15 @@ nav {
     justify-content: center;
     gap: 1rem;
     animation: fadeIn 1s ease-out 1s both;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--white-color);
-    font-size: 0.9rem;
-    opacity: 0;
-    animation: fadeIn 1s ease-out 1.5s forwards;
+    display: none;
 }
 
 .scroll-indicator i {
-    margin-top: 8px;
-    font-size: 1.2rem;
-    animation: bounce 2s infinite;
+    display: none;
 }
 
 @keyframes bounce {
@@ -414,6 +402,12 @@ nav {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .news-card {
@@ -530,6 +524,16 @@ nav {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .stories-carousel {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        overflow: visible;
+        margin-bottom: 2rem;
+    }
+}
+
 .story-card {
     background-color: var(--white-color);
     border-radius: var(--border-radius);
@@ -544,6 +548,23 @@ nav {
     height: 550px;
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .story-card {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        height: auto;
+        border-bottom: 3px solid var(--secondary-color);
+        border-top: none;
+    }
+    
+    .story-img {
+        height: 220px;
+        flex: none;
+    }
 }
 
 .story-card:hover {
@@ -592,12 +613,26 @@ nav {
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    .story-content {
+        padding: 1.5rem;
+        display: block;
+    }
+}
+
 .story-content h3 {
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
     font-size: 1.4rem;
     transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .story-content h3 {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+    }
 }
 
 .story-card:hover .story-content h3 {
@@ -615,12 +650,28 @@ nav {
     text-overflow: ellipsis;
 }
 
+@media (max-width: 768px) {
+    .story-content p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        flex: none;
+    }
+}
+
 .read-more {
     color: #000;
     font-weight: 600;
     display: inline-block;
     position: relative;
     margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .read-more {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
 }
 
 .story-card:hover .read-more {
@@ -642,6 +693,12 @@ nav {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-controls {
+        display: none;
+    }
 }
 
 .prev-btn, .next-btn {
@@ -812,17 +869,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .story-card {
-        min-width: 300px;
-        max-width: 300px;
-        height: 520px;
-        margin-right: 1rem;
-    }
-    
-    .story-img {
-        height: 200px;
-        flex: 0 0 200px;
-    }
     header {
         position: absolute;
         width: 100%;
@@ -917,7 +963,7 @@ footer {
     
     .hero {
         padding-top: 10rem;
-        padding-bottom: 6rem;
+        padding-bottom: 4rem;
     }
     
     .hero h2 {
@@ -934,11 +980,7 @@ footer {
         font-size: 0.9rem;
     }
     
-    .scroll-indicator {
-        bottom: 20px;
-    }
-    
     .cta-buttons {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 }
