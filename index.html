@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Africa - Telling Africa's Story, Africa's Way</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>This is Africa</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#africa-speaks">Africa Speaks</a></li>
+                    <li><a href="#africa-now">Africa Now</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Telling Africa's Story, Africa's Way</h2>
+            <p class="hero-subtitle">Authentic voices, powerful narratives, and the vibrant spirit of a continent</p>
+            <div class="cta-buttons">
+                <a href="#africa-speaks" class="btn primary-btn">Explore Stories</a>
+                <a href="#africa-now" class="btn secondary-btn">See What's New</a>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Africa Now (News Center) Section -->
+        <section id="africa-now" class="news-section">
+            <div class="container">
+                <h2 class="section-title">Africa Now</h2>
+                <p class="section-description">Discover the latest news and cultural stories from across the African continent</p>
+                <div class="category-tabs">
+                    <button class="tab active" data-category="all">All</button>
+                    <button class="tab" data-category="politics">Politics & Leadership</button>
+                    <button class="tab" data-category="business">Business & Innovation</button>
+                    <button class="tab" data-category="youth">Youth & Education</button>
+                    <button class="tab" data-category="environment">Environment & Climate</button>
+                    <button class="tab" data-category="diaspora">Diaspora & Global Africa</button>
+                    <button class="tab" data-category="traditions">Cultural Heritage</button>
+                </div>
+                
+                <div class="news-grid">
+                    <!-- News cards with authentic African cultural images -->
+                    <div class="news-card" data-category="politics">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Parliament">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">BBC Africa</span>
+                            <span class="news-time">2 hours ago</span>
+                            <h3>African Union Summit Addresses Continental Security Challenges</h3>
+                            <p>Leaders from across the continent gather to discuss collaborative approaches to regional security concerns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="business">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Market">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">AfricaNews</span>
+                            <span class="news-time">5 hours ago</span>
+                            <h3>Tech Startups in Kenya Secure Record Funding Despite Global Downturn</h3>
+                            <p>Nairobi's vibrant tech ecosystem continues to attract international investors looking to tap into Africa's innovation potential.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="environment">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Landscape">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">Al Jazeera Africa</span>
+                            <span class="news-time">1 day ago</span>
+                            <h3>Renewable Energy Projects Transform Rural Communities in Tanzania</h3>
+                            <p>Solar initiatives bring electricity to previously unconnected villages, creating new economic opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="youth">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1571210862729-78a52d3779a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Students">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">CNN Africa</span>
+                            <span class="news-time">3 days ago</span>
+                            <h3>Pan-African Youth Summit Launches Digital Skills Initiative</h3>
+                            <p>New program aims to train one million young Africans in coding and digital entrepreneurship by 2025.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="diaspora">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1523881374236-dd34f6ac1226?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Fashion">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">The Guardian Africa</span>
+                            <span class="news-time">2 days ago</span>
+                            <h3>African Fashion Takes Center Stage at International Design Week</h3>
+                            <p>Designers from across the continent showcase traditional patterns and techniques reimagined for global audiences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card" data-category="traditions">
+                        <div class="news-img">
+                            <img src="https://images.unsplash.com/photo-1566994616736-69fe8cc420f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Dance">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-source">Africa Geographic</span>
+                            <span class="news-time">4 days ago</span>
+                            <h3>Traditional Dance Festival Celebrates Cultural Heritage Across Borders</h3>
+                            <p>Annual event brings together performers from 25 African nations to showcase their unique cultural expressions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="load-more">
+                    <button class="btn secondary-btn">Explore More African Stories</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Africa Speaks (Storytelling) Section -->
+        <section id="africa-speaks" class="stories-section">
+            <div class="container">
+                <h2 class="section-title">Africa Speaks</h2>
+                <p class="section-description">Authentic stories and cultural narratives from the heart of the continent</p>
+                <div class="category-tabs">
+                    <button class="tab active" data-category="all">All Stories</button>
+                    <button class="tab" data-category="tribes">Tribes & Cultures</button>
+                    <button class="tab" data-category="traditions">Traditions & Rituals</button>
+                    <button class="tab" data-category="diaspora">Diaspora Journeys</button>
+                    <button class="tab" data-category="women">African Women Voices</button>
+                    <button class="tab" data-category="future">Future Africa</button>
+                </div>
+                
+                <div class="stories-carousel">
+                    <div class="story-card" data-category="tribes">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maasai Culture">
+                        </div>
+                        <div class="story-content">
+                            <h3>Living with the Maasai: Traditions in Modern Times</h3>
+                            <p>An intimate look at how one of Africa's most iconic tribes balances ancient customs with contemporary challenges.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="women">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1591634616938-1dfa7ee2e617?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women Entrepreneurs">
+                        </div>
+                        <div class="story-content">
+                            <h3>The Market Queens: How Women Drive West African Economies</h3>
+                            <p>From Ghana to Senegal, women entrepreneurs control vast trading networks that form the backbone of local economies.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="future">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1580321187070-da8bdee36013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Contemporary African Art">
+                        </div>
+                        <div class="story-content">
+                            <h3>New Voices, Ancient Inspirations: Contemporary African Art</h3>
+                            <p>Meet the artists reshaping global perceptions through works that blend traditional influences with modern expressions.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="traditions">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ethiopian Coffee Ceremony">
+                        </div>
+                        <div class="story-content">
+                            <h3>The Sacred Art of Ethiopian Coffee Ceremony</h3>
+                            <p>Exploring the cultural significance and intricate rituals behind one of Africa's most cherished traditions.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="diaspora">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="African Diaspora">
+                        </div>
+                        <div class="story-content">
+                            <h3>Returning Home: Diaspora Stories of Reconnection</h3>
+                            <p>Personal journeys of Africans in the diaspora rediscovering their roots and rebuilding connections to their ancestral homelands.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="women">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="African Women">
+                        </div>
+                        <div class="story-content">
+                            <h3>Mothers of Innovation: Rural Women Transforming Communities</h3>
+                            <p>How women-led cooperatives are pioneering sustainable solutions to local challenges across rural Africa.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card" data-category="future">
+                        <div class="story-img">
+                            <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="African Technology">
+                        </div>
+                        <div class="story-content">
+                            <h3>Tech Hubs Across Africa: The Digital Revolution</h3>
+                            <p>How young African innovators are building tech solutions to address local challenges and create opportunities.</p>
+                            <a href="#" class="read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="view-all-stories">
+                    <a href="#" class="btn primary-btn">View All Stories</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>This is Africa</h2>
+                    <p>Telling Africa's Story, Africa's Way</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#africa-speaks">Africa Speaks</a></li>
+                        <li><a href="#africa-now">Africa Now</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn primary-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 This is Africa. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
