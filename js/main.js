@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
                 header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.backgroundColor = 'transparent';
                 header.style.boxShadow = 'none';
             }
         }
@@ -78,14 +78,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (items) {
+                // Reset carousel position if it's the stories section
+                if (parent.id === 'africa-speaks') {
+                    const carousel = document.querySelector('.stories-carousel');
+                    if (carousel) {
+                        carousel.style.transform = 'translateX(0)';
+                    }
+                }
+                
                 if (category === 'all') {
                     items.forEach(item => {
-                        item.style.display = 'block';
+                        if (parent.id === 'africa-speaks') {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'block';
+                        }
                     });
                 } else {
                     items.forEach(item => {
                         if (item.getAttribute('data-category') === category) {
-                            item.style.display = 'block';
+                            if (parent.id === 'africa-speaks') {
+                                item.style.display = 'flex';
+                            } else {
+                                item.style.display = 'block';
+                            }
                         } else {
                             item.style.display = 'none';
                         }
@@ -114,10 +130,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Adjust card width based on screen size
             if (window.innerWidth <= 768) {
-                cardWidth = carousel.offsetWidth;
+                cardWidth = storyCards[0].offsetWidth + 16; // card width + margin
             } else {
                 cardWidth = 380 + 32; // card width + margin
             }
+            
+            // Make all cards visible
+            storyCards.forEach(card => {
+                card.style.display = 'flex';
+            })
             
             maxPosition = (storyCards.length - 1) * cardWidth;
         }
